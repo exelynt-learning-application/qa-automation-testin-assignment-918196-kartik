@@ -1,0 +1,67 @@
+# Software Testing Assignment – Theoretical Answers
+
+## 1. Define 8 Testing Types with Examples
+
+1\. Unit Testing\
+Unit testing is the testing of individual components or functions of an application to verify that they work correctly.
+
+Example: Testing a login function to check whether it validates a username and password correctly.
+
+2\. Integration Testing\
+Integration testing checks whether two or more modules work correctly when connected.
+
+Example: Checking whether the login module correctly retrieves user details from the database.
+
+3\. Functional Testing\
+Functional testing verifies that application features work according to the specified requirements.
+
+Example: Testing whether a user can successfully register using valid details.
+
+4\. Smoke Testing\
+Smoke testing is a basic test performed on a new software build to verify that its critical features are working.
+
+Example: Checking whether the application launches and the login page opens successfully after deployment.
+
+5\. Sanity Testing\
+Sanity testing is a focused test performed after a minor change or bug fix to verify that the affected functionality works correctly.
+
+Example: After fixing a password reset issue, checking whether the user can reset the password successfully.
+
+6\. Retesting\
+Retesting verifies that a previously reported bug has been fixed.
+
+Example: If the login button was not working, testing it again after the developer fixes the issue.
+
+7\. Regression Testing\
+Regression testing ensures that new changes or bug fixes have not affected existing functionality.
+
+Example: After fixing the login feature, checking login, registration, password reset, and logout functionality.
+
+8\. Performance Testing\
+Performance testing checks an application's speed, stability, responsiveness, and behavior under different workloads.
+
+Example: Checking whether a website can handle 1,000 users accessing it simultaneously.
+
+## 2. Difference Between Smoke Testing and Sanity Testing
+
+| Smoke Testing                                                           | Sanity Testing                                                 |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Checks the basic functionality of the application.                      | Checks specific functionality after a minor change or bug fix. |
+| Usually performed on a new software build.                              | Usually performed on a build with small changes.               |
+| Covers major and critical features.                                     | Covers a limited and specific area.                            |
+| Helps determine whether the build is stable enough for further testing. | Helps determine whether the specific change works correctly.   |
+| Example: Checking login, registration, and the home page.               | Example: Checking a fixed password validation issue.           |
+
+## 3. Difference Between Retesting and Regression Testing
+
+| Retesting                                                  | Regression Testing                                                             |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Verifies whether a previously reported bug is fixed.       | Verifies whether existing functionality still works after changes.             |
+| Focuses on the specific failed test case.                  | Covers related and potentially affected features.                              |
+| Uses test cases that previously failed.                    | Uses test cases for existing functionality.                                    |
+| Performed after a bug fix.                                 | Performed after code changes, enhancements, or bug fixes.                      |
+| Example: Testing the login button again after it is fixed. | Example: Checking login, registration, and password reset after the login fix. |
+
+## Conclusion
+
+Software testing helps ensure that an application meets requirements, works correctly, and provides a reliable user experience. Different testing types identify different kinds of defects. Smoke testing checks build stability, sanity testing checks specific changes, retesting verifies bug fixes, and regression testing ensures that existing features continue to work properly.
