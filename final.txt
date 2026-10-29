@@ -1,0 +1,116 @@
+
+BUG-002 Newly enrolled student does not appear at the top of the list Medium Medium Needs revalidation
+BUG-003 Embedded YouTube lesson video is unavailable in the course player Medium Medium Needs revalidation
+BUG-004 Free course displays Pending Approval status Medium Medium Needs revalidation
+BUG-005 Access Denied appears when viewing payment timeline High High Needs revalidation
+2. Detailed Bug Reports
+BUG-001: Unpaid student can be assigned to a mentor
+Module: College Admin > Mentors > Assign Students
+Steps to Reproduce: 1. Log in as college admin.
+2. Open Assign Students.
+3. Select a course and a student with pending/unpaid status.
+4. Attempt to assign the student to a mentor.
+Expected Result: The system should block assignment until payment is completed, except for free courses or explicitly authorized
+exceptions.
+Actual Result: The student can be selected and assigned without a completed payment check.
+Severity: High
+Priority: High
+Screenshot / Evidence: Screenshot supplied: Assign Students modal and student/course API response. Reproduce and confirm the
+student's payment status before filing.
+BUG-002: Newly enrolled student does not appear at the top of the list
+Module: College Admin > Enrolled Students
+Steps to Reproduce: 1. Log in as college admin.
+2. Open Enrolled Students.
+3. Enroll a new student or use a newly created enrollment.
+4. Refresh the list and check the first rows.
+Expected Result: The newest enrollment should appear first when the list is intended to be sorted by enrollment date descending.
+Actual Result: The new enrollment is not shown at the top of the list.
+Severity: Medium
+Priority: Medium
+Screenshot / Evidence: Screenshot supplied: Students list showing the table and Network response. Confirm expected sort order with
+product requirements.
+BUG-003: Embedded YouTube lesson video is unavailable in the course player
+Module: Student Panel > Course Content > Video
+Steps to Reproduce: 1. Log in as a student.
+2. Open the course and select the SDLC & Development Models lesson.
+3. Select the Video tab and press play.
+Bug Reports and Bug Life Cycle Page 2
+Expected Result: The lesson video should play inside the course player when embedding is permitted; otherwise, a clear fallback should
+be shown.
+Actual Result: The player displays “Video unavailable” and says playback on other websites has been disabled by the video owner, with a
+Watch on YouTube option.
+Severity: Medium
+Priority: Medium
+Screenshot / Evidence: Screenshot supplied: course player displays the YouTube “Video unavailable” message. This may be a
+content/embed restriction rather than an application defect; verify the video owner's embed settings.
+BUG-004: Free course displays Pending Approval status
+Module: Student/College Admin > Course Enrollment
+Steps to Reproduce: 1. Open a course configured as free.
+2. Enroll as a student or inspect the enrollment status in the relevant user/admin view.
+3. Check the status shown after enrollment.
+Expected Result: A free course should follow the defined free-enrollment workflow and should not require payment approval; any separate
+academic approval should be clearly distinguished.
+Actual Result: The free course is shown as Pending Approval.
+Severity: Medium
+Priority: Medium
+Screenshot / Evidence: Screenshot/issue previously reported by tester. Verify whether the status means academic approval or payment
+approval before classifying as a defect.
+BUG-005: Access Denied appears when viewing payment timeline
+Module: Student/User View > Payment Timeline
+Steps to Reproduce: 1. Log in with the affected user account.
+2. Navigate to the payment timeline.
+3. Open the timeline page or select its view action.
+Expected Result: An authorized user should be able to view their own payment timeline; unauthorized access should be handled with a
+clear, appropriate message.
+Actual Result: The page displays an “Access Denied” message in the user view payment timeline.
+Severity: High
+Priority: High
+Screenshot / Evidence: Issue previously reported by tester. Confirm role permissions and reproduce with a user who should have access.
+3. Bug Life Cycle
+Typical flow: New → Triaged → Assigned → In Progress → Fixed/Resolved → Retest → Closed. If the issue still exists during retesting, it is
+Reopened and sent back to the development team.
+New
+Issue reported
+Triaged
+Validated and prioritized
+Assigned
+Owner selected
+In Progress
+Fix underway
+Fixed / Resolved
+Developer marks fix
+Retest
+QA verifies
+Closed
+Fix confirmed
+Reopened
+Still failing
+• New: A tester reports a reproducible issue with steps and evidence.
+• Triaged: The team validates the report, checks duplicates, and assigns severity/priority.
+• Assigned: The issue is assigned to a developer or responsible team.
+• In Progress: The developer investigates and works on a fix.
+• Fixed / Resolved: A fix is implemented and marked ready for verification.
+• Retest: The tester repeats the failed steps on the fixed build.
+• Closed: The tester confirms the fix and closes the bug.
+• Reopened: If the issue still occurs, the tester reopens it and returns it for investigation.
+• Rejected / Duplicate / Cannot Reproduce: Alternative outcomes when the report is invalid, already reported, or cannot be reproduced;
+the reason should be documented.
+Bug Reports and Bug Life Cycle Page 3
+Other possible outcomes: Rejected (not a valid defect), Duplicate (already tracked), or Cannot Reproduce (not repeatable with the supplied
+information). Record the reason and supporting evidence.
+4. Severity vs. Priority
+Severity describes how seriously a bug affects system functionality or users. Priority describes how urgently the team should fix the bug.
+Aspect Severity Priority
+Meaning Impact of the defect Urgency to fix the defect
+Usually decided by QA with technical/product input Product owner/business and team
+Example scale Critical, High, Medium, Low P1, P2, P3, P4
+5. Examples of Severity and Priority
+Example 1: High Severity, High Priority. A user cannot access the payment timeline because the page shows Access Denied even
+though the user is authorized. This blocks access to important payment information. Severity: High. Priority: High, because the issue should
+be investigated quickly.
+Example 2: Low Severity, High Priority. The company logo is slightly misaligned on the homepage just before a major public launch.
+Core functionality still works, so severity is Low, but the team may assign High priority because the branding issue is highly visible and
+time-sensitive.
+6. Submission Notes
+Attach screenshots for each bug in the final submission. Screenshots should show the issue clearly and avoid exposing passwords, tokens,
+or unnecessary personal data. Reproduce each issue, confirm expected behavior with requirements, and update severity/priority if the
