@@ -1,0 +1,362 @@
+E-Commerce Website Test Plan and Requirement Traceability Matrix
+
+Selected Demo Website: SauceDemo (https://www.saucedemo.com/)
+
+Prepared as a software testing assignment
+
+1. Introduction
+
+This document defines the testing approach for a demo e-commerce website, SauceDemo. The site simulates an online shopping workflow, including product browsing, cart management, checkout, and order confirmation.
+
+Test environment and available features may change. This plan assumes the standard demo account and currently accessible features.
+
+2. Test Objectives
+
+Verify that core shopping workflows work according to requirements.
+
+Identify functional defects, usability issues, and validation failures before release.
+
+Confirm that cart totals and checkout information are displayed consistently.
+
+Verify that users receive clear feedback for invalid input and unsuccessful actions.
+
+Provide traceability between requirements and test coverage.
+
+3. Scope
+
+In scope: login and logout; product listing; product details and sorting where available; adding/removing products from cart; cart contents; checkout information form; order summary and completion; required-field validation; basic usability and browser compatibility checks.
+
+Out of scope: real payment processing, actual shipment or delivery, production customer data, penetration testing, load/stress testing, third-party services not exposed by the demo, and backend source-code testing.
+
+4. Test Approach
+
+Functional testing: validate each user-facing feature against expected behavior.
+
+Positive testing: use valid credentials and complete valid shopping journeys.
+
+Negative testing: submit missing or invalid checkout information and verify clear validation messages.
+
+Boundary testing: check empty cart, one item, multiple items, and required-field boundaries.
+
+Regression testing: rerun core login, cart, and checkout tests after fixes.
+
+Compatibility and usability checks: perform a basic pass on supported desktop browsers and verify readable messages, labels, and navigation.
+
+Testing will be primarily manual, with test cases recorded in a spreadsheet or test management tool. Defects will include steps, expected/actual results, severity, and evidence.
+
+5. Entry Criteria
+
+Test environment is accessible and stable.
+
+Core application pages can be opened.
+
+Test credentials are available.
+
+Requirements and expected workflows are understood.
+
+Test cases and test data have been prepared.
+
+6. Exit Criteria
+
+All planned high-priority test cases have been executed.
+
+All critical and high-severity defects are fixed and retested, or formally accepted as known issues.
+
+At least 95% of planned test cases have a recorded result; any unexecuted tests are documented with reasons.
+
+No unresolved blocker prevents the main shopping workflow from being completed.
+
+Test summary and defect status are shared with stakeholders.
+
+7. Resources and Environment
+
+People: one QA tester, one developer for defect investigation, and one reviewer/product owner for requirement clarification.
+
+Hardware: desktop or laptop with internet access.
+
+Software: current Chrome or Firefox browser, optional second browser for compatibility, screenshot tool, and spreadsheet/test management tool.
+
+Environment: public SauceDemo demo site; use only the provided demo credentials and non-sensitive test data.
+
+Sample test data: valid demo login credentials, one or more products, and fictional checkout details such as first name, last name, and postal code.
+
+8. Schedule
+
+Day 1: review requirements, confirm environment, and prepare test cases and test data.
+
+Day 2: execute login, product listing, sorting, and cart test cases.
+
+Day 3: execute checkout validation, order summary, and order completion tests.
+
+Day 4: regression testing, browser/usability checks, defect retesting, and test summary.
+
+Schedule is an estimate for a small demo application and may be adjusted based on defect count or environment availability.
+
+9. Risks and Mitigation
+
+Risk: demo site is unavailable. Mitigation: record the outage, retry later, and report blocked tests.
+
+Risk: demo behavior or credentials change. Mitigation: confirm the site instructions and update test data before execution.
+
+Risk: limited access to backend or payment functionality. Mitigation: clearly mark backend/payment processing as out of scope.
+
+Risk: defects are found late. Mitigation: prioritize critical workflows and report defects as soon as they are reproducible.
+
+Risk: test results are inconsistent across browsers. Mitigation: record browser/version and repeat the test to confirm reproducibility.
+
+Risk: accidental use of real personal information. Mitigation: use fictional data only.
+
+10. Test Deliverables
+
+Approved test plan.
+
+Requirement Traceability Matrix (RTM).
+
+Test scenarios and detailed test cases.
+
+Test data and environment details.
+
+Defect/bug reports with reproduction steps and evidence.
+
+Execution status and test results.
+
+Retest and regression results.
+
+Final test summary report with risks, open defects, and release recommendation.
+
+11. Assumptions
+
+The selected demo website is available for testing without a purchase using real money.
+
+Testing is limited to functionality visible through the browser.
+
+Any observed behavior should be confirmed against the current demo site's instructions before being logged as a defect.
+
+12. Requirement Traceability Matrix (RTM)
+
+REQ ID
+
+Requirement
+
+Test Case ID(s)
+
+Expected Result
+
+Coverage
+
+REQ-01
+
+User can log in with valid demo credentials.
+
+TC-01, TC-02
+
+Valid login opens the product page; invalid login shows a useful error.
+
+Covered
+
+REQ-02
+
+User can view the product catalogue.
+
+TC-03
+
+Products and their names, prices, and actions are displayed.
+
+Covered
+
+REQ-03
+
+User can add a product to the cart.
+
+TC-04, TC-05
+
+Selected product appears in the cart and cart count updates.
+
+Covered
+
+REQ-04
+
+User can remove a product from the cart.
+
+TC-06
+
+Removed product no longer appears in the cart.
+
+Covered
+
+REQ-05
+
+User can sort products where sorting is available.
+
+TC-07
+
+Product order matches the selected sort option.
+
+Covered
+
+REQ-06
+
+Checkout requires mandatory customer information.
+
+TC-08, TC-09
+
+Missing required fields show validation feedback and prevent progression.
+
+Covered
+
+REQ-07
+
+User can review the checkout order summary.
+
+TC-10
+
+Summary shows selected items and totals consistently.
+
+Covered
+
+REQ-08
+
+User can complete the demo order.
+
+TC-11
+
+Order completion confirmation is displayed.
+
+Covered
+
+REQ-09
+
+User can log out.
+
+TC-12
+
+User is returned to the login page and protected pages are not left open as an active session.
+
+Covered
+
+13. Sample Test Cases
+
+TC-01
+
+Login with valid credentials
+
+Enter valid demo credentials and submit.
+
+Product page opens.
+
+Positive
+
+TC-02
+
+Login with invalid credentials
+
+Enter an incorrect username or password and submit.
+
+Clear error is shown; login is not completed.
+
+Negative
+
+TC-03
+
+View product catalogue
+
+Log in and inspect the product listing.
+
+Product names, prices, and available actions are visible.
+
+Functional
+
+TC-04
+
+Add one product to cart
+
+Click Add to Cart for one product.
+
+Cart indicator updates and product is added.
+
+Functional
+
+TC-05
+
+Add multiple products
+
+Add at least two products and open the cart.
+
+All selected products are listed correctly.
+
+Functional
+
+TC-06
+
+Remove a product
+
+Remove an item from the cart.
+
+Item is removed and cart indicator updates as applicable.
+
+Functional
+
+TC-07
+
+Sort products
+
+Choose an available sort option.
+
+Products appear in the selected order.
+
+Functional
+
+TC-08
+
+Checkout with missing first name
+
+Proceed to checkout and leave first name blank.
+
+Validation message appears and progression is blocked.
+
+Negative
+
+TC-09
+
+Checkout with missing postal code
+
+Leave postal code blank and continue.
+
+Validation message appears and progression is blocked.
+
+Negative
+
+TC-10
+
+Verify order summary
+
+Add products and proceed through checkout information.
+
+Items and displayed totals are consistent with the cart.
+
+Functional
+
+TC-11
+
+Complete demo order
+
+Complete the valid demo checkout flow.
+
+Confirmation page/message is displayed.
+
+End-to-end
+
+TC-12
+
+Log out
+
+Use the logout action.
+
+Login page is displayed.
+
+Functional
+
+14. Approval / Sign-off
+
+Prepared by: ____________________    Reviewed by: ____________________    Date: ____________________
+
